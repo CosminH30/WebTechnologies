@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autentificare</title>
+  <link rel="stylesheet" href="/styles/auth-forms.css">
+</head>
+<body>
+<form action="/login" method="POST" class="auth-form" novalidate>
+  <h1>Autentificare</h1>
+  <p id="errorMessage" class="error-message" style="color: red; margin-bottom: 15px;"></p>
+
+  <input type="text" name="username" placeholder="Nume utilizator" required autocomplete="username">
+  <input type="password" name="password" placeholder="Parola" required autocomplete="current-password">
+  <button type="submit">Autentifică-te</button>
+  <p>Nu ai cont? <a href="/create-account">Înregistrează-te</a></p>
+</form>
+
+<script>
+  // extrage parametrii din URL pentru a cauta un mesaj de eroare
+  const urlParams = new URLSearchParams(window.location.search);
+  const error = urlParams.get('error');
+  // afiseaza mesajul de eroare daca exista in URL.
+  if (error) {
+    document.getElementById('errorMessage').textContent = decodeURIComponent(error);
+  }
+</script>
+</body>
+</html>

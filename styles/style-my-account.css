@@ -1,0 +1,3 @@
+body { font-family: sans-serif; padding: 20px; }
+header { display: flex; justify-content: space-between; align-items: center; }
+main { margin-top: 20px; }
