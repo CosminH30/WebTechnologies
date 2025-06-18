@@ -1,3 +1,91 @@
-body { font-family: sans-serif; padding: 20px; }
-header { display: flex; justify-content: space-between; align-items: center; }
-main { margin-top: 20px; }
+/* reset margini */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* background full-screen */
+body {
+    background-image: url('/styles/images/baby-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+/* continutul paginii */
+header, main {
+    text-align: center;
+    padding: 20px;
+}
+
+.stages-accordion {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.stages-accordion details {
+    /* doar o linie de separare intre fiecare sectiune */
+    border-bottom: 1px solid #ddd;
+}
+
+/* eliminam bordura de jos de la ultima sectiune */
+.stages-accordion details:last-of-type {
+    border-bottom: none;
+}
+
+
+.stages-accordion summary {
+    list-style: none;
+    padding: 16px 20px;
+    margin: 0;
+    cursor: pointer;
+    background: #9C27B0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.stages-accordion summary:hover {
+    background: #7B1FA2;
+}
+
+.stages-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.stages-accordion .stage-content {
+
+    background: #f7f0fa;
+    padding: 16px 20px;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* stil pentru elementele h3 din interiorul stage-content*/
+.stages-accordion .stage-content h3 {
+    color: #6a0dad;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* stil pentru paragrafe și liste */
+.stages-accordion .stage-content p,
+.stages-accordion .stage-content ul {
+    margin-bottom: 10px;
+}
+.stages-accordion .stage-content ul {
+    list-style: disc inside;
+    padding-left: 0;
+}
