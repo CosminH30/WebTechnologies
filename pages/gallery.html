@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeria Familiei - Baby Info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/style-my-account.css">
+  <link rel="stylesheet" href="/styles/style-navbar.css">
+  <link rel="stylesheet" href="/styles/style-gallery.css">
+</head>
+<body>
+<nav class="navbar">
+  <ul class="navbar-list">
+    <li class="navbar-item"><a href="/home" class="navbar-link">Home</a></li>
+    <li class="navbar-item"><a href="/profile" class="navbar-link">Profile</a></li>
+    <li class="navbar-item"><a href="/calendar" class="navbar-link">Calendar</a></li>
+    <li class="navbar-item"><a href="/test4" class="navbar-link">Test 4</a></li>
+    <li class="navbar-item"><a href="/gallery" class="navbar-link">Galerie</a></li>
+
+  </ul>
+</nav>
+<header>
+  <h1>Galeria Foto a Familiei</h1>
+</header>
+<main>
+  <section class="gallery-container">
+    <div class="gallery-category">
+      <h2 id="child-gallery-title">Poze cu [Nume Copil]</h2>
+      <div class="upload-section">
+        <label for="select-child">Alege copilul:</label>
+        <select id="select-child">
+          <option value="">Alege un copil</option>
+        </select>
+        <input type="file" id="upload-child-image" accept="image/*" multiple>
+        <label for="upload-child-image" class="upload-button">Încarcă Poze cu Copilul</label>
+        <span class="file-info" id="child-file-info"></span>
+      </div>
+      <div class="gallery-grid" id="child-gallery-grid">
+        <p class="no-images-message" id="no-child-images">Nu există imagini încărcate pentru acest copil.</p>
+      </div>
+    </div>
+
+    <div class="gallery-category">
+      <h2>Poze cu Familia</h2>
+      <div class="upload-section">
+        <input type="file" id="upload-family-image" accept="image/*" multiple>
+        <label for="upload-family-image" class="upload-button">Încarcă Poze cu Familia</label>
+        <span class="file-info" id="family-file-info"></span>
+      </div>
+      <div class="gallery-grid" id="family-gallery-grid">
+        <p class="no-images-message" id="no-family-images">Nu există imagini încărcate pentru familie.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/utils/script-gallery.js" defer></script>
+</body>
+</html>

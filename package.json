@@ -9,7 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "formidable": "^3.5.4",
     "sqlite3": "^5.1.7"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CosminH30/WebTechnologies.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CosminH30/WebTechnologies/issues"
+  },
+  "homepage": "https://github.com/CosminH30/WebTechnologies#readme",
   "description": ""
 }
