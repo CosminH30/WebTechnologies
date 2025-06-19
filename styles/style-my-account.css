@@ -1,3 +1,6 @@
+/* styles/style-my-account.css */
+/* Fundal full-screen identic cu login/register, fără centrare flex */
+
 /* reset margini */
 html, body {
     margin: 0;
@@ -11,15 +14,16 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
 }
 
-/* continutul paginii */
+/* conținutul paginii */
 header, main {
     text-align: center;
     padding: 20px;
 }
+
 
 .stages-accordion {
     width: 90%;
@@ -32,15 +36,12 @@ header, main {
 }
 
 .stages-accordion details {
-    /* doar o linie de separare intre fiecare sectiune */
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
 }
 
-/* eliminam bordura de jos de la ultima sectiune */
-.stages-accordion details:last-of-type {
-    border-bottom: none;
+.stages-accordion details:first-of-type {
+    border-top: none;
 }
-
 
 .stages-accordion summary {
     list-style: none;
@@ -63,29 +64,9 @@ header, main {
 }
 
 .stages-accordion .stage-content {
-
-    background: #f7f0fa;
     padding: 16px 20px;
+    background: #fff;
     color: #333;
     font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-/* stil pentru elementele h3 din interiorul stage-content*/
-.stages-accordion .stage-content h3 {
-    color: #6a0dad;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
-}
-
-/* stil pentru paragrafe și liste */
-.stages-accordion .stage-content p,
-.stages-accordion .stage-content ul {
-    margin-bottom: 10px;
-}
-.stages-accordion .stage-content ul {
-    list-style: disc inside;
-    padding-left: 0;
+    line-height: 1.4;
 }
