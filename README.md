@@ -23,8 +23,7 @@ https://docs.google.com/document/d/1k8zKUh638_gfuzOlFvDB8NsW0bDboLXFW2RU0iknqjk/
 ---
 
 ## ⚙️ Arhitectură Backend:
-![Arhitectură Backend](D:/Web_Tech/bby/bbyblack.jpg)
----
+![Arhitectură Backend](arhitectura.jpg)
 
 ## 📋 Cerințe Proiect:
 
