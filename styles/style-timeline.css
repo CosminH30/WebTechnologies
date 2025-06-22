@@ -1,0 +1,193 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/styles/images/baby-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.timeline-filters {
+    margin-bottom: 20px;
+}
+
+.timeline-filters select {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: #9C27B0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.timeline-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-list li {
+    background: rgba(255, 255, 255, 0.9);
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-tl-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 16px;
+    background: #9C27B0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.add-tl-btn:hover {
+    transform: scale(1.05);
+}
+
+.tl-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px auto;
+    max-width: 400px;
+}
+
+.tl-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tl-form input,
+.tl-form textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tl-form .save-btn,
+.tl-form .cancel-btn {
+    background: #9C27B0;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform .2s;
+    margin-right: 8px;
+}
+
+.tl-form .cancel-btn {
+    background: #777;
+}
+
+.tl-form button:hover {
+    transform: scale(1.05);
+}
+
+.delete-tl-btn {
+    margin-top: 8px;
+    background: #c00;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.delete-tl-btn:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .timeline-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .timeline-filters select {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .timeline-list ul {
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    .timeline-filters select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .timeline-list li {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .add-tl-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .tl-form {
+        padding: 10px;
+    }
+
+    .tl-form input,
+    .tl-form textarea {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .tl-form .save-btn,
+    .tl-form .cancel-btn {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+.export-import-controls button,
+.export-import-controls input[type="file"] {
+    background: #9C27B0;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform .2s;
+    font-size: 1rem;
+    margin-right: 8px;
+}
+
+.export-import-controls button:hover,
+.export-import-controls input[type="file"]:hover {
+    transform: scale(1.05);
+}

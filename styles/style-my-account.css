@@ -1,13 +1,8 @@
-/* styles/style-my-account.css */
-/* Fundal full-screen identic cu login/register, fără centrare flex */
-
-/* reset margini */
 html, body {
     margin: 0;
     padding: 0;
 }
 
-/* background full-screen */
 body {
     background-image: url('/styles/images/baby-background.jpg');
     background-size: cover;
@@ -18,20 +13,18 @@ body {
     color: #333;
 }
 
-/* conținutul paginii */
 header, main {
     text-align: center;
     padding: 20px;
 }
 
-
 .stages-accordion {
     width: 90%;
     max-width: 800px;
     margin: 40px auto;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
@@ -69,4 +62,29 @@ header, main {
     color: #333;
     font-size: 0.95rem;
     line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    .profile-card,
+    .stages-accordion {
+        width: 95%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    .profile-card,
+    .stages-accordion {
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 0;
+    }
 }

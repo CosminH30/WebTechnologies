@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Evenimente</title>
+    <meta name="description"
+          content="Gestioneaza evenimentele importante din calendarul copilului tau, precum hranirea, somnul si evenimentele medicale. Adauga si vizualizeaza evenimente pe zile.">
+
+    <link rel="stylesheet" href="/styles/style-navbar.css">
+    <link rel="stylesheet" href="/styles/style-calendar.css">
+</head>
+<body>
+<nav class="navbar">
+    <ul class="navbar-list">
+        <li><a href="/home" class="navbar-link">Home</a></li>
+        <li><a href="/profile" class="navbar-link">Profil</a></li>
+        <li><a href="/calendar" class="navbar-link">Calendar</a></li>
+        <li><a href="/timeline" class="navbar-link">Timeline</a></li>
+        <li><a href="/gallery" class="navbar-link">Galerie</a></li>
+    </ul>
+</nav>
+<main>
+    <section class="calendar-filters">
+        <h2>Filtre evenimente</h2> <select id="child-select"></select>
+        <select id="type-select">
+            <option value="feeding">Hranire</option>
+            <option value="sleep">Somn</option>
+            <option value="medical">Medical</option>
+        </select>
+        <button id="btn-add-event">Adauga eveniment</button>
+    </section>
+
+    <div class="calendar-nav">
+        <button id="prev-month" class="nav-btn">◀</button>
+        <span id="current-month"></span>
+        <button id="next-month" class="nav-btn">▶</button>
+    </div>
+
+    <div class="calendar-container">
+        <div id="calendar"></div>
+    </div>
+
+    <form id="add-event-form" class="event-form" style="display:none;">
+        <input type="hidden" id="evt-child">
+        <label>
+            Ziua start:
+            <input type="date" id="evt-date" required>
+        </label>
+        <label>
+            Ora:
+            <input type="time" id="evt-time" required>
+        </label>
+        <label>
+            Notițe:
+            <textarea id="evt-notes" placeholder="Optional"></textarea>
+        </label>
+        <label>
+            Repeta pentru (zile):
+            <input type="number" id="evt-repeat" min="0" placeholder="0">
+        </label>
+        <button type="submit" class="save-btn">Salveaza</button>
+        <button type="button" id="cancel-event" class="cancel-btn">Anuleaza</button>
+    </form>
+
+    <ul id="event-list" class="event-list"></ul>
+</main>
+
+<script src="/utils/script-calendar.js"></script>
+</body>
+</html>

@@ -13,14 +13,11 @@ Proiectul **Baby Info Web** isi propune sa creeze o platforma web completa, dedi
 
 ## 🖥️ Prezentare Video:
 
-[Link către prezentarea video - Va fi actualizat ulterior]
-
+https://drive.google.com/file/d/1ibOwpqIWwNwmVsK7l1yUzs9DlxPp9nIk/view
 ---
 
 ## 📄 Documentație:
-
-https://docs.google.com/document/d/1k8zKUh638_gfuzOlFvDB8NsW0bDboLXFW2RU0iknqjk/edit?tab=t.0
----
+https://drive.google.com/file/d/1mjcBkAwtQJHQvZu_AYWBeBgShOvIF-UN/view
 
 ## ⚙️ Arhitectură Backend:
 ![Arhitectură Backend](arhitectura.jpg)
@@ -33,4 +30,4 @@ https://profs.info.uaic.ro/andrei.panu/courses/web/lab/webprojects.html
 ## 🔑 Cont Administrator:
 
 * **Utilizator:** administrator
-* **Parolă:** administrator1234A
+* **Parolă:** administrator1234A.

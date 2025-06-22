@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Timeline Copil</title>
+    <meta name="description"
+          content="Gestioneaza si vizualizeaza evenimentele importante din cresterea copilului tau pe o cronologie personalizata.">
+    <link rel="stylesheet" href="/styles/style-navbar.css">
+    <link rel="stylesheet" href="/styles/style-timeline.css">
+</head>
+<body>
+<nav class="navbar">
+    <ul class="navbar-list">
+        <li><a href="/home" class="navbar-link">Home</a></li>
+        <li><a href="/profile" class="navbar-link">Profil</a></li>
+        <li><a href="/calendar" class="navbar-link">Calendar</a></li>
+        <li><a href="/timeline" class="navbar-link">Timeline</a></li>
+        <li><a href="/gallery" class="navbar-link">Galerie</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="timeline-filters">
+        <h2>Filtre Timeline</h2> <label for="child-select">Alege copil:</label>
+        <select id="child-select"></select>
+    </section>
+
+    <section class="export-import-controls">
+        <h2>Optiuni Export/Import</h2>
+        <button id="export-json">Export JSON</button>
+        <button id="export-csv">Export CSV</button>
+        <label for="import-json">Import JSON:</label>
+        <input type="file" id="import-json" accept=".json">
+    </section>
+
+    <section class="timeline-list">
+        <h2>Evenimente Timeline</h2>
+        <ul id="timeline-list"></ul>
+    </section>
+
+    <button id="btn-add-timeline-event" class="add-tl-btn">
+        Adauga eveniment in Timeline
+    </button>
+
+    <form id="add-tl-form" class="tl-form" style="display:none;">
+        <h3>Adauga Eveniment Nou</h3> <label>Data:
+        <input type="date" id="tl-date" required>
+    </label>
+        <label>Nume eveniment:
+            <input type="text" id="tl-name" required>
+        </label>
+        <label>Descriere:
+            <textarea id="tl-desc" placeholder="Optional"></textarea>
+        </label>
+        <button type="submit" class="save-btn">Salveaza</button>
+        <button type="button" id="cancel-tl" class="cancel-btn">Anuleaza</button>
+    </form>
+</main>
+
+<script src="/utils/script-timeline.js"></script>
+</body>
+</html>

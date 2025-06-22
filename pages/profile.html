@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Copil</title>
+    <meta name="description"
+          content="Gestioneaza profilurile copiilor tai, vezi varsta si acceseaza rapid calendarul, timeline-ul si istoricul medical pentru fiecare copil.">
+    <link rel="stylesheet" href="/styles/style-navbar.css">
+    <link rel="stylesheet" href="/styles/style-profile.css">
+</head>
+<body>
+<nav class="navbar">
+    <ul class="navbar-list">
+        <li><a href="/home" class="navbar-link">Home</a></li>
+        <li><a href="/profile" class="navbar-link">Profil</a></li>
+        <li><a href="/calendar" class="navbar-link">Calendar</a></li>
+        <li><a href="/timeline" class="navbar-link">Timeline</a></li>
+        <li><a href="/gallery" class="navbar-link">Galerie</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="profile-card">
+        <!-- comenzi carousel -->
+        <div class="carousel-controls">
+            <button id="prev-child" class="nav-btn">←</button>
+            <button id="next-child" class="nav-btn">→</button>
+        </div>
+        <!-- date copil curent -->
+        <div class="profile-info">
+            <h2 id="child-name">Nume copil</h2>
+            <p id="child-age">Vârstă: --</p>
+        </div>
+
+        <!-- actiuni adauga/sterge -->
+        <div class="profile-actions">
+            <button id="btn-add-child">Adauga copil</button>
+            <button id="btn-delete-child">Sterge copil</button>
+            <button id="btn-logout">Logout</button>
+        </div>
+
+        <!-- linkuri rapide către calendar -->
+        <div class="quick-links">
+            <a id="link-feeding" href="#" class="stage-btn">Hranire</a>
+            <a id="link-sleep" href="#" class="stage-btn">Somn</a>
+            <a id="link-medical" href="#" class="stage-btn">Istoric Medical</a>
+        </div>
+
+    </section>
+</main>
+
+
+<script src="/utils/script-profile.js"></script>
+</body>
+</html>

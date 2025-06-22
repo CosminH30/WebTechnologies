@@ -1,5 +1,5 @@
-// D:\Web_Tech\bby\utils\script-gallery.js
 document.addEventListener('DOMContentLoaded', async () => {
+    // obtine referinte la elementele HTML cheie
     const els = id => document.getElementById(id);
     const [childTitle, childGrid, familyGrid, childDropdown] =
         ['child-gallery-title', 'child-gallery-grid', 'family-gallery-grid', 'select-child'].map(els);
@@ -10,28 +10,30 @@ document.addEventListener('DOMContentLoaded', async () => {
     const [noChildMsg, noFamilyMsg] =
         ['no-child-images', 'no-family-images'].map(els);
 
-    let children = [];
-    let selectedChildId = null;
+    let children = []; // lista de copii
+    let selectedChildId = null; // id copilului
 
+    // incarca lista de copii si populeaza dropdown-ul
     async function loadChildren() {
         try {
             const response = await fetch('/api/children');
             const responseText = await response.text();
 
-            if (!response.ok) {
+            if (!response.ok) { // gestioneaza erorile HTTP
                 let errorMessage = `Eroare HTTP! Status: ${response.status}`;
                 try {
                     const errorData = JSON.parse(responseText);
                     errorMessage = errorData.message || errorMessage;
-                } catch (e) {}
-                alert('Eroare la încărcarea copiilor: ' + errorMessage);
+                } catch (e) {
+                }
+                alert('Eroare la incarcarea copiilor: ' + errorMessage);
                 return;
             }
 
-            try {
+            try { // gestioneaza erorile de parsare JSON
                 children = JSON.parse(responseText);
             } catch (jsonParseError) {
-                alert('Eroare internă la procesarea listei de copii. Verificați consola.');
+                alert('Eroare interna la procesarea listei de copii. Verificati consola.');
                 return;
             }
 
@@ -52,6 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    // creeaza si adauga un element imagine in galerie
     const displayImage = (grid, path, id) => {
         const item = document.createElement('div');
         item.className = 'gallery-item';
@@ -62,10 +65,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         grid.appendChild(item);
     };
 
+    // incarca si afiseaza imaginile din galerie
     async function loadGallery() {
         childGrid.innerHTML = '';
         familyGrid.innerHTML = '';
-        noChildMsg.style.display = 'block';
+        noChildMsg.style.display = 'block'; // afiseaza mesajele de "fara imagini" initial
         noFamilyMsg.style.display = 'block';
 
         try {
@@ -85,7 +89,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return;
             }
 
-            let [hasChild, hasFamily] = [false, false];
+            let [hasChild, hasFamily] = [false, false]; // flag-uri pentru a verifica existenta imaginilor
 
             images.forEach(img => {
                 if (img.category === 'child' && selectedChildId !== null && parseInt(img.child_id) === parseInt(selectedChildId)) {
@@ -98,17 +102,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
             noChildMsg.style.display = hasChild ? 'none' : 'block';
             noFamilyMsg.style.display = hasFamily ? 'none' : 'block';
-        } catch (e) {}
+        } catch (e) {
+        }
     }
 
+    // Sterge o imagine din galerie
     async function deleteImage(id, itemElement) {
         try {
-            const res = await fetch(`/api/gallery/images/${id}`, { method: 'DELETE' });
+            const res = await fetch(`/api/gallery/images/${id}`, {method: 'DELETE'});
             const responseText = await res.text();
             let data = {};
             try {
                 data = JSON.parse(responseText);
-            } catch (e) {}
+            } catch (e) {
+            }
 
             if (res.ok) {
                 itemElement.remove();
@@ -122,12 +129,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    // gestioneaza incarcarea imaginilor (pentru copil sau familie)
     async function handleUpload(event, category) {
         const files = event.target.files;
         if (!files.length) return;
 
         const infoEl = category === 'child' ? childInfo : familyInfo;
-        infoEl.textContent = `Se încarcă ${files.length} fișier(e)...`;
+        infoEl.textContent = `Se încarca ${files.length} fisier(e)...`;
 
         const formData = new FormData();
         Array.from(files).forEach(f => formData.append('image', f));
@@ -135,8 +143,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (category === 'child') {
             if (!selectedChildId) {
-                alert('Selectează un copil pentru a încărca o poză de copil!');
-                infoEl.textContent = 'Selectează un copil!';
+                alert('Selecteaza un copil pentru a incarca o poza de copil!');
+                infoEl.textContent = 'Selecteaza un copil!';
                 event.target.value = '';
                 return;
             }
@@ -144,29 +152,31 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try {
-            const res = await fetch('/api/gallery/upload', { method: 'POST', body: formData });
+            const res = await fetch('/api/gallery/upload', {method: 'POST', body: formData});
             const responseText = await res.text();
             let data = {};
             try {
                 data = JSON.parse(responseText);
-            } catch (e) {}
+            } catch (e) {
+            }
 
             if (res.ok) {
-                infoEl.textContent = `Încărcat: ${data.message || 'Imagine încărcată cu succes.'}`;
-                alert(data.message || 'Imagine încărcată cu succes!');
+                infoEl.textContent = `Incarcat: ${data.message || 'Imagine incarcata cu succes.'}`;
+                alert(data.message || 'Imagine incarcata cu succes!');
                 loadGallery();
             } else {
                 infoEl.textContent = `Eroare: ${data.message || responseText || res.statusText}`;
-                alert(`Eroare la încărcare: ${data.message || responseText || res.statusText}`);
+                alert(`Eroare la incarcare: ${data.message || responseText || res.statusText}`);
             }
         } catch (e) {
             infoEl.textContent = 'Eroare de rețea.';
-            alert('Eroare de rețea la încărcare. Verificați consola pentru detalii.');
+            alert('Eroare de retea la incarcare. Verificati consola pentru detalii.');
         } finally {
             event.target.value = '';
         }
     }
 
+    // ataseaza event listeneri pentru schimbarea selectiei si incarcarea imaginilor
     childDropdown.onchange = () => {
         selectedChildId = childDropdown.value ? parseInt(childDropdown.value) : null;
         const selectedChildName = childDropdown.value ? childDropdown.options[childDropdown.selectedIndex].text : 'Alege un copil';

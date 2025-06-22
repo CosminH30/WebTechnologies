@@ -1,0 +1,145 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('/styles/images/baby-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.9);
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h2 {
+    margin: 10px 0 5px;
+    font-size: 1.4rem;
+}
+
+.profile-info p {
+    margin: 0 0 15px;
+    color: #555;
+}
+
+.profile-actions button {
+    margin: 5px;
+    padding: 8px 16px;
+    background: #9C27B0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.profile-actions button:hover {
+    transform: scale(1.05);
+}
+
+.quick-links {
+    margin-top: 20px;
+}
+
+.quick-links .stage-btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 18px;
+    background: #9C27B0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background .2s;
+}
+
+.quick-links .stage-btn:hover {
+    background: #7B1FA2;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.nav-btn {
+    background: #9C27B0;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    .profile-card {
+        max-width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .profile-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .profile-info p {
+        font-size: 1rem;
+    }
+
+    .profile-actions button,
+    .quick-links .stage-btn {
+        padding: 8px 14px;
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    .profile-card {
+        max-width: 100%;
+        margin: 10px 0;
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    .profile-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .profile-info p {
+        font-size: 0.9rem;
+    }
+
+    .profile-actions button,
+    .quick-links .stage-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}

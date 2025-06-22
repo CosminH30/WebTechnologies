@@ -1,0 +1,258 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/styles/images/baby-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.calendar-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.calendar-filters h2 {
+    flex-basis: 100%;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #555;
+    text-align: left;
+}
+
+.calendar-filters select,
+.calendar-filters button {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 40px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #9C27B0;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.calendar-filters button:hover,
+.calendar-filters select:hover {
+    background: #7B1FA2;
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.calendar-nav .nav-btn {
+    background: #9C27B0;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+
+.calendar-nav .nav-btn:hover {
+    background: #7B1FA2;
+    transform: scale(1.1);
+}
+
+#current-month {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.calendar-container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+#calendar .day-name {
+    font-weight: 600;
+    padding: 6px 0;
+}
+
+#calendar .day-cell {
+    min-height: 60px;
+    padding: 4px;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+#calendar .day-cell.disabled {
+    color: #aaa;
+    cursor: default;
+}
+
+#calendar .day-cell:hover:not(.disabled) {
+    background: rgba(156, 39, 176, 0.2);
+}
+
+#calendar .day-cell.has-event {
+    background: #9C27B0;
+    color: #fff;
+}
+
+#calendar .day-cell.has-event::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+.event-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.event-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.event-form input,
+.event-form textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.event-form .save-btn,
+.event-form .cancel-btn {
+    background: #9C27B0;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform .2s;
+    margin-right: 8px;
+}
+
+.event-form .cancel-btn {
+    background: #777;
+}
+
+.event-form button:hover {
+    transform: scale(1.05);
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-list li {
+    background: rgba(255, 255, 255, 0.9);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.event-list .delete-event {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #c00;
+}
+
+#calendar .day-cell.selected {
+    outline: 2px solid #7B1FA2;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        max-width: 95%;
+    }
+
+    .calendar-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .calendar-filters select,
+    .calendar-filters button {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 10px;
+        height: auto;
+    }
+
+    .calendar-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    .calendar-filters select,
+    .calendar-filters button {
+        font-size: 0.9rem;
+        padding: 8px;
+        height: auto;
+    }
+
+    .calendar-nav .nav-btn {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    #calendar {
+        gap: 2px;
+    }
+
+    #calendar .day-cell {
+        min-height: 50px;
+        padding: 2px;
+        font-size: 0.85rem;
+    }
+
+    #calendar .day-name {
+        font-size: 0.85rem;
+        padding: 4px 0;
+    }
+}
